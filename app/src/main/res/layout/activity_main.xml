@@ -22,7 +22,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dividend"
-                android:textSize="8pt"/>
+                android:textSize="8pt"
+                android:layout_marginLeft="3pt"/>
 
             <EditText
                 android:id="@+id/editText1"
@@ -43,7 +44,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="8pt"
-                android:text="Divisor" />
+                android:text="Divisor"
+                android:layout_marginLeft="3pt"/>
 
             <EditText
                 android:id="@+id/editText2"
@@ -82,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ausgabe"
                 android:textSize="9pt"
+                android:layout_marginLeft="3pt"
                 />
 
             <TextView

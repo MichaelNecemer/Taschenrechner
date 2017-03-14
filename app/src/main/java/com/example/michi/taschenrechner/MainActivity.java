@@ -30,30 +30,39 @@ public class MainActivity extends AppCompatActivity {
         tv_ausgabe = (TextView) findViewById(R.id.tv_ausgabe);
         tv_ausgabe2 = (TextView) findViewById(R.id.tv_ausgabe2);
 
+            button1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(editText1.getText().toString().isEmpty()||editText2.getText().toString().isEmpty()){
+                        tv_ausgabe.setText("Fehler");
+                        tv_ausgabe2.setText("Feld darf nicht leer sein");
+                    } else if (editText1.getText().toString().equals(".")||editText2.getText().toString().equals(".")){
+                        tv_ausgabe.setText("Fehler");
+                        tv_ausgabe2.setText(". ist ein ungültiger Wert!");
+                    } else {
+                    num1 = Double.parseDouble(editText1.getText().toString());
+                    if (Double.parseDouble(editText2.getText().toString()) == 0) {
+                        tv_ausgabe.setText("Fehler");
+                        tv_ausgabe2.setText("Nicht durch 0 dividieren!");
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                num1 = Double.parseDouble(editText1.getText().toString());
-                if(Double.parseDouble(editText2.getText().toString())==0){
-                    tv_ausgabe.setText("Fehler");
-                    tv_ausgabe2.setText("Nicht durch 0 dividieren!");
-                } else {
-                    num2 = Double.parseDouble(editText2.getText().toString());
-                    result = num1/num2;
-                    tv_ausgabe2.setText(""+result);
+                    } else{
+                        num2 = Double.parseDouble(editText2.getText().toString());
+                        result = num1 / num2;
+                        tv_ausgabe.setText("Ausgabe ");
+                        tv_ausgabe2.setText("" + result);
+                    }}
+
                 }
+            });
 
-            }
-        });
 
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
+            public void onClick(View w){
                 editText1.setText("");
                 editText2.setText("");
                 tv_ausgabe2.setText("");
-                tv_ausgabe.setText("Ausgabe");
+                tv_ausgabe.setText("Ausgabe ");
 
             }
         });
